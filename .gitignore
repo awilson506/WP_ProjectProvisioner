@@ -3,7 +3,7 @@
 
 # Don't Ignore some
 !.gitignore
-!tools/installer.sh
+!installer.sh
 !README.md
 !vagrantfile
 !vagrant_bootstrap.sh
