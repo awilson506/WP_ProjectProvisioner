@@ -9,7 +9,7 @@ __        ______    ____                 _     _
    \_/\_/  |_|     |_|   |_|  \___/ \_/ |_|___/_|\___/|_| |_|\___|_| 
 "
 
-DOMAIN = ""
+DOMAIN=""
 
 read -p "Enter Domain Name for your DEV environment: " DOMAIN
 echo " "
