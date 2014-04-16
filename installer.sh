@@ -52,6 +52,37 @@ DATABASE_USER="$DBUSER"
 DATABASE_PASSWORD="$DBPASS"
 EOF
 
+cat <<EOF | tee document_root/local-config.php
+<?php
+
+@define('WP_DEBUG', false);
+
+//@define('CFCT_DEBUG', true);
+
+/** Support for subdirectory installation */
+
+@define('WP_SITEURL', 'http://$DOMAIN/wp');
+@define('WP_HOME', 'http://$DOMAIN');
+
+@define('WP_CONTENT_URL', WP_HOME.'/wp-content');
+@define('WP_CONTENT_DIR', dirname(__FILE__).'/wp-content');
+ 
+@define('WP_MEMORY_LIMIT', '128M');
+@define('WP_POST_RFEVISIONS', 50);
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+@define('DB_NAME', '$DBNAME');
+
+/** MySQL database username */
+@define('DB_USER', '$DBUSER');
+
+/** MySQL database password */
+@define('DB_PASSWORD', '$DBPASS');
+
+/** MySQL hostname */
+@define('DB_HOST', 'localhost');
+EOF
 
 echo "Creating data directory."
 mkdir data

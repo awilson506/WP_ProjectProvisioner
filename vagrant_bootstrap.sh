@@ -48,11 +48,9 @@ echo "
 |                                                                               |
 ---------------------------------------------------------------------------------
 "
-sudo apt-get update >> /home/vagrant/provision_log.log
-
-sudo add-apt-repository -y ppa:ondrej/php5 >> /home/vagrant/provision_log.log
-
-sudo apt-get update >> /home/vagrant/provision_log.log
+sudo apt-get update
+sudo add-apt-repository -y ppa:ondrej/php5 
+sudo apt-get update
 
 echo "
 ---------------------------------------------------------------------------------
@@ -61,9 +59,9 @@ echo "
 |                                                                               |
 ---------------------------------------------------------------------------------
 "
-sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core zsh >> /home/vagrant/provision_log.log
+sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core zsh
 
-sudo apt-get install -y php5-xdebug >> /home/vagrant/provision_log.log
+sudo apt-get install -y php5-xdebug
 
 cat << EOF | sudo tee -a /etc/php5/mods-available/xdebug.ini
 xdebug.cli_color=1
@@ -138,7 +136,6 @@ echo "
 "
 
 sed -i 's/#force_color_prompt/force_color_prompt/g' ~/.bashrc
-sudo curl -L http://install.ohmyz.sh | sh
 
 export PATH=$PATH:vendor/bin
 
@@ -170,8 +167,10 @@ echo "
 ---------------------------------------------------------------------------------
 |                                                                               |
 |                                    Done                                       |
-|          You will need to add $BOX_IP $DOMAIN to your hosts file              |
 |                                                                               |
 ---------------------------------------------------------------------------------
+
+You will need to add $BOX_IP $DOMAIN to your hosts file
+
 "
 
