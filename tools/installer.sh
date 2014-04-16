@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+set -e
 
 echo  "
 __        ______    ____                 _     _                       
