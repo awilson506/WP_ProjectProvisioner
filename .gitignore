@@ -3,7 +3,7 @@
 
 # Don't Ignore some
 !.gitignore
-!tools
+!tools/installer.sh
 !README.md
 !vagrantfile
-!sample.envoy.blade.php
+!vagrant_bootstrap.sh
