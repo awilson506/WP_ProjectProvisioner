@@ -1,0 +1,9 @@
+# Ignore All
+*
+
+# Don't Ignore some
+!.gitignore
+!tools
+!README.md
+!vagrantfile
+!sample.envoy.blade.php
