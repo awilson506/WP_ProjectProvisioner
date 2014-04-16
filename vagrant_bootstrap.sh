@@ -18,8 +18,7 @@ echo "
 |                                                                               |
 ---------------------------------------------------------------------------------
 "
-sudo touch /home/vagrant/provision_log.log
-sudo apt-get update >> /home/vagrant/provision_log.log
+sudo apt-get update 
 
 echo "
 ---------------------------------------------------------------------------------
@@ -103,14 +102,14 @@ echo "--- Configure Apache Virtual host---"
 cat <<EOF |sudo tee  /etc/apache2/sites-available/$DOMAIN.conf
     <VirtualHost *:80>
 
-    DocumentRoot /vagrant
+    DocumentRoot /vagrant/document_root
 
     ServerName $DOMAIN
 
     ErrorLog /home/vagrant/error.log
     CustomLog /home/vagrant/access.log combined
 
-    <Directory /vagrant/>
+    <Directory /vagrant/document_root>
         AllowOverride All
         Order Allow,Deny
         Allow from all
