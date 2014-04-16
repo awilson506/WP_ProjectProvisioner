@@ -97,11 +97,15 @@ sudo service apache2 restart
 echo "--- Shell Settings ---"
 export PATH=$PATH:vendor/bin
 
-echo "--- Mounting the database ---"
+echo "--- Configuring the database ---"
 echo "CREATE DATABASE ${DATABASE_NAME};" | mysql -u root -proot
 echo "GRANT USAGE ON *.* to ${DATABASE_USER}@localhost identified by '$DATABASE_PASSWORD';" | mysql -u root -p${MYSQL_ROOT_PASS}
 echo "GRANT ALL PRIVILEGES ON ${DATABASE_NAME}.* to ${DATABASE_USER}@localhost;" | mysql -u root -p${MYSQL_ROOT_PASS}
-mysql -u root -p${MYSQL_ROOT_PASS} ${DATABASE_NAME} < /vagrant/data/database_dump.sql
+
+if [ -f /home/vagrant/data/database_dump.sql ]; then
+    echo "--- Mounting the database ---"
+    mysql -u root -p${MYSQL_ROOT_PASS} ${DATABASE_NAME} < /home/vagrant/data/database_dump.sql
+fi
 
 
 echo "--- Done ---"
