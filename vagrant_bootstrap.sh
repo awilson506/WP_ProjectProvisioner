@@ -9,7 +9,7 @@ echo "
 ---------------------------------------------------------------------------------
 "
 
-source config.sh
+source /vagrant/config.sh
 
 echo "
 ---------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ echo "
 |                                                                               |
 ---------------------------------------------------------------------------------
 "
-sudo apt-get install -y vim curl python-software-properties >> /home/vagrant/provision_log.log
+sudo apt-get install -y vim curl python-software-properties
 
 echo "
 ---------------------------------------------------------------------------------
