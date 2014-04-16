@@ -150,6 +150,7 @@ echo "CREATE DATABASE ${DATABASE_NAME};" | mysql -u root -proot
 echo "GRANT USAGE ON *.* to ${DATABASE_USER}@localhost identified by '$DATABASE_PASSWORD';" | mysql -u root -p${MYSQL_ROOT_PASS}
 echo "GRANT ALL PRIVILEGES ON ${DATABASE_NAME}.* to ${DATABASE_USER}@localhost;" | mysql -u root -p${MYSQL_ROOT_PASS}
 
+if [ -f /vagrant/data/database_dump.sql ]; then
 
 echo "
 ---------------------------------------------------------------------------------
@@ -158,7 +159,8 @@ echo "
 |                                                                               |
 ---------------------------------------------------------------------------------
 "
-    mysql -u root -p${MYSQL_ROOT_PASS} ${DATABASE_NAME} < /home/vagrant/data/database_dump.sql
+    mysql -u root -p${MYSQL_ROOT_PASS} ${DATABASE_NAME} < /vagrant/data/database_dump.sql
+fi
 
 echo "
 ---------------------------------------------------------------------------------
