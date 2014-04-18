@@ -32,7 +32,7 @@ else
 fi
 
 echo "Installing latest version of wordpress"
-git clone git@github.com:WordPress/WordPress.git document_root/wp
+git clone --depth=1 git@github.com:WordPress/WordPress.git document_root/wp
 
 read -p "Enter Database Name: " DBNAME
 echo " "
