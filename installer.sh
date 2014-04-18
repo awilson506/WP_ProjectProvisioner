@@ -26,7 +26,7 @@ echo " "
 
 if test "$REPO" != ""; then
 	echo "Cloning Project Repository"
-	git clone $REPO document_root
+	git clone --recursive $REPO document_root
 else
 	mkdir document_root
 fi
