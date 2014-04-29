@@ -7,7 +7,7 @@ Your wordpress project can be found in *document_root* You can work in here, and
 # Instructions
 
 1. Clone this repository using `git clone git@github.com:ciaranmg/WP_ProjectProvisioner.git [YOUR PROJECT NAME]`
-2. Run installer.sh
+2. Run installer.sh like this: `$ ./installer.sh`
 3. It will ask you for:
   1. The domain you want your local dev site to be configured on
   2. The git repository for your project
