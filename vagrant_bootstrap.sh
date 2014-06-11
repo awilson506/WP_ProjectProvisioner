@@ -74,6 +74,7 @@ xdebug.max_nesting_level = 200
 xdebug.remote_handler=dbgp
 xdebug.remote_log="/home/vagrant/xdebug.log"
 xdebug.remote_host=10.0.2.2 ; IDE-Environments IP, from vagrant box.
+xdebug.max_nesting_level = 200
 EOF
 
 echo "
