@@ -85,6 +85,8 @@ echo "
 "
 
 sudo a2enmod rewrite
+sudo rm -rf /var/www/html
+sudo ln -s /vagrant/document_root /var/www/html
 
 
 echo "--- Set apache host name --- "
