@@ -70,6 +70,7 @@ xdebug.idekey = "vagrant"
 xdebug.remote_enable = 1
 xdebug.remote_autostart = 0
 xdebug.remote_port = 9000
+xdebug.max_nesting_level = 200
 xdebug.remote_handler=dbgp
 xdebug.remote_log="/home/vagrant/xdebug.log"
 xdebug.remote_host=10.0.2.2 ; IDE-Environments IP, from vagrant box.
