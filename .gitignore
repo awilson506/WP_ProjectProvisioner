@@ -7,3 +7,4 @@
 !README.md
 !vagrantfile
 !vagrant_bootstrap.sh
+!db_update.sh
