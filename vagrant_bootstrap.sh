@@ -77,6 +77,9 @@ xdebug.remote_host=10.0.2.2 ; IDE-Environments IP, from vagrant box.
 xdebug.max_nesting_level = 200
 EOF
 
+sudo sed -i 's/short_open_tag = Off/short_open_tag = On/' /etc/php5/apache2/php.ini
+sudo sed -i 's/asp_tags = Off/asp_tags = On/' /etc/php5/apache2/php.ini
+
 echo "
 ---------------------------------------------------------------------------------
 |                                                                               |
