@@ -89,7 +89,7 @@ mkdir data
 echo "
 ---------------------------------------------------------------------------------
 |                                                                               |
-|   Remember to place a database_dump.sql file in data/ for a development DB    |
+|   Remember to place a .sql file in data/ for a development DB    |
 |                                                                               |
 ---------------------------------------------------------------------------------
 "

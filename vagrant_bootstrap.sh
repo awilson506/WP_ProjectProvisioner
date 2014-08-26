@@ -91,6 +91,7 @@ echo "
 sudo a2enmod rewrite
 sudo rm -rf /var/www/html
 sudo ln -s /vagrant/document_root /var/www/html
+sudo chmod 777 -R /var/lib/php5
 
 
 echo "--- Set apache host name --- "
@@ -157,7 +158,7 @@ echo "CREATE DATABASE ${DATABASE_NAME};" | mysql -u root -proot
 echo "GRANT USAGE ON *.* to ${DATABASE_USER}@localhost identified by '$DATABASE_PASSWORD';" | mysql -u root -p${MYSQL_ROOT_PASS}
 echo "GRANT ALL PRIVILEGES ON ${DATABASE_NAME}.* to ${DATABASE_USER}@localhost;" | mysql -u root -p${MYSQL_ROOT_PASS}
 
-if [ -f /vagrant/data/database_dump.sql ]; then
+if [ -f /vagrant/data/*.sql ]; then
 
 echo "
 ---------------------------------------------------------------------------------
@@ -166,7 +167,7 @@ echo "
 |                                                                               |
 ---------------------------------------------------------------------------------
 "
-    mysql -u root -p${MYSQL_ROOT_PASS} ${DATABASE_NAME} < /vagrant/data/database_dump.sql
+    mysql -u root -p${MYSQL_ROOT_PASS} ${DATABASE_NAME} < /vagrant/data/*.sql
 fi
 
 echo "
