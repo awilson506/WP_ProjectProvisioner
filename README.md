@@ -29,6 +29,6 @@ Your wordpress project can be found in *document_root* You can work in here, and
 
 1. Type `vagrant up` from your project folder
 2. Vagrant will boot a virtual machine and provision it using vagrant_bootstrap.sh
-3. If you have a database_dump.sql file in the data folder, that will be imported into the DB on the vagrant machine.
+3. If you have a .sql file in the data folder, that will be imported into the DB on the vagrant machine.
 4. Once Vagrant has booted, you will see a message to update your hosts file to access the site.
 
